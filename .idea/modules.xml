@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/discovery/discovery.iml" filepath="$PROJECT_DIR$/discovery/discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iiv/iiv.iml" filepath="$PROJECT_DIR$/iiv/iiv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssv/ssv.iml" filepath="$PROJECT_DIR$/ssv/ssv.iml" />
+    </modules>
+  </component>
+</project>

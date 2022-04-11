@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: ssv
+  datasource:
+    url: jdbc:postgresql://172.16.16.29:5432/postgres
+    username: postgres
+    password: 1111
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

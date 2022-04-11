@@ -1,0 +1,13 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: iiv
+  datasource:
+    url: jdbc:postgresql://172.16.16.29:5432/postgres
+    username: postgres
+    password: 1111
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
