@@ -7,10 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="moliya" />
         <module name="discovery" />
-        <module name="ssv" />
         <module name="iiv" />
+        <module name="ssv" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
