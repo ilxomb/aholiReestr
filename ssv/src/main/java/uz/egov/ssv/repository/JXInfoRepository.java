@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+
 @Repository
 public interface JXInfoRepository extends JpaRepository<JSVXInformation, UUID> {
 
@@ -26,4 +27,5 @@ public interface JXInfoRepository extends JpaRepository<JSVXInformation, UUID> {
 
     @Query("SELECT t FROM JSVXInformation t, JSVXData d WHERE t.id=d.information and d.jshshir=:jshshir")
     List<JSVXInformation> findByJSHSHIR(@Param("jshshir") String jshshir);
+
 }
