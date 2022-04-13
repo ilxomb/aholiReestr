@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/discovery/discovery.iml" filepath="$PROJECT_DIR$/discovery/discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpm/dpm.iml" filepath="$PROJECT_DIR$/dpm/dpm.iml" />
       <module fileurl="file://$PROJECT_DIR$/iiv/iiv.iml" filepath="$PROJECT_DIR$/iiv/iiv.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssv/ssv.iml" filepath="$PROJECT_DIR$/ssv/ssv.iml" />
     </modules>

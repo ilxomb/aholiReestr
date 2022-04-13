@@ -7,13 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dpm" />
         <module name="discovery" />
-        <module name="iiv" />
         <module name="ssv" />
+        <module name="iiv" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="discovery" target="11" />
+      <module name="dpm" target="11" />
       <module name="iiv" target="11" />
       <module name="moliya" target="11" />
       <module name="ssv" target="11" />
@@ -22,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="discovery" options="-parameters" />
+      <module name="dpm" options="-parameters" />
       <module name="iiv" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="ssv" options="-parameters" />
