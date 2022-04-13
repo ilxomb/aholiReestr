@@ -4,12 +4,17 @@ spring:
   application:
     name: ssv
   datasource:
-    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
+#    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=mh
     username: postgres
-    password: 3431215
+#    password: 3431215
+    password: 1111
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:

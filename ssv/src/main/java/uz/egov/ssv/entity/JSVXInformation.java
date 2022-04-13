@@ -25,12 +25,12 @@ import java.util.Objects;
 @Table(name = "jsvx_info")
 public class JSVXInformation extends AbsEntity implements Serializable {
 
-    @JsonProperty("Information_Date")
+    @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
     private Date InformationDate;
 
     @JsonProperty("jsvxdata")
-    @OneToMany(mappedBy = "jsvxInformation", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
     private List<JSVXData> JSVXData;

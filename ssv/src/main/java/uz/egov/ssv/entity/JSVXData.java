@@ -1,6 +1,7 @@
 package uz.egov.ssv.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -18,40 +19,43 @@ import java.util.Objects;
 @Entity
 @Table(name = "jsvx_data")
 public class JSVXData extends AbsEntity implements Serializable {
-    @JsonProperty("JSHSHIR")
+    @JsonProperty("jshshir")
     @Column(length = 14, nullable = false)
-    private String JSHSHIR;
+    private String jshshir;
 
-    @JsonProperty("VXJSHSHIR")
+    @JsonProperty("vxjshshir")
     @Column(length = 14, nullable = false)
-    private String VXJSHSHIR;
+    private String vxjshshir;
 
-    @JsonProperty("VXFIO")
-    private String VXFIO;
+    @JsonProperty("vxfio")
+    @Column(length = 255)
+    private String vxfio;
 
-    @JsonProperty("VXBDate")
+    @JsonProperty("vxbdate")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private Date VXBDate;
+    private Date vxbdate;
 
-    @JsonProperty("VXJoy")
-    private String VXJoy;
+    @JsonProperty("vxjoy")
+    @Column(length = 255)
+    private String vxjoy;
 
-    @JsonProperty("VXgraj")
+    @JsonProperty("vxgraj")
     @Column(length = 3)
-    private String VXgraj;
+    private String vxgraj;
 
-    @JsonProperty("VXDate")
+    @JsonProperty("vxdate")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private Date VXDate;
+    private Date vxdate;
 
-    @JsonProperty("VXSrok")
+    @JsonProperty("vxsrok")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private Date VXSrok;
+    private Date vxsrok;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "info_id", nullable = false)
     @ToString.Exclude
-    private JSVXInformation jsvxInformation;
+    @JsonIgnore
+    private JSVXInformation information;
 
     @Override
     public boolean equals(Object o) {
