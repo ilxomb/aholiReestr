@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@172.16.16.29" uuid="a42ae264-0507-4cdb-97ee-03ad0ef0b4ee">
+    <data-source source="LOCAL" name="spring@localhost" uuid="6498fca9-a62b-4c7b-b902-7cff6a211e24">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://172.16.16.29:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/spring</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

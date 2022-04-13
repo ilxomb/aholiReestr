@@ -4,7 +4,7 @@ spring:
   application:
     name: iiv
   datasource:
-    url: jdbc:postgresql://172.16.16.29:5432/postgres
+    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=md
     username: postgres
     password: 1111
   jpa:
