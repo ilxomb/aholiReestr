@@ -3,6 +3,11 @@ package uz.egov.ssv.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +15,7 @@ import uz.egov.ssv.entity.JSVXInformation;
 import uz.egov.ssv.service.JXService;
 
 import java.sql.Date;
+import java.util.List;
 
 @RestController
 @CrossOrigin()
@@ -28,8 +34,10 @@ public class JXController {
     }
     @GetMapping("/list")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
-    public ResponseEntity<?> list(){
-        return ResponseEntity.ok(jxService.readAll());
+    public ResponseEntity<?> list( @RequestParam(defaultValue = "0") Integer pageNo,
+                                   @RequestParam(defaultValue = "10") Integer pageSize){
+        List<JSVXInformation> list = jxService.readAll(pageNo, pageSize);
+        return new ResponseEntity<List<JSVXInformation>>(list, new HttpHeaders(), HttpStatus.OK);
     }
     @GetMapping("/list/{sana}")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")

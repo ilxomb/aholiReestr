@@ -21,7 +21,7 @@ public interface JXInfoRepository extends JpaRepository<JSVXInformation, UUID> {
 
     Page<JSVXInformation> findAll(Pageable pageable);
 
-    @Query("SELECT t FROM JSVXInformation t WHERE date(InformationDate)=:sana")
+    @Query(value = "SELECT t FROM JSVXInformation t WHERE date(InformationDate)=:sana", nativeQuery = true)
     List<JSVXInformation> findByDate(@Param("sana") Date sana);
 
     @Query("SELECT t FROM JSVXInformation t, JSVXData d WHERE t.id=d.information and d.jshshir=:jshshir")

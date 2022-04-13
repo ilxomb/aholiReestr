@@ -1,6 +1,10 @@
 package uz.egov.ssv.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import uz.egov.ResponseType;
@@ -41,6 +45,15 @@ public class JXService {
 
     public List<JSVXInformation> readAll() {
         return jxInfoRepository.findAll();
+    }
+    public List<JSVXInformation> readAll(Integer pageNo, Integer pageSize) {
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by("instime").descending());
+        Page<JSVXInformation> pagedResult = jxInfoRepository.findAll(paging);
+        if(pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return new ArrayList<JSVXInformation>();
+        }
     }
     public List<JSVXInformation> findByDate(Date sana) {
         return jxInfoRepository.findByDate(sana);
