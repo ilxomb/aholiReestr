@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dpm" />
         <module name="discovery" />
+        <module name="jwt" />
         <module name="ssv" />
         <module name="iiv" />
       </profile>
@@ -17,6 +18,7 @@
       <module name="discovery" target="11" />
       <module name="dpm" target="11" />
       <module name="iiv" target="11" />
+      <module name="jwt" target="11" />
       <module name="moliya" target="11" />
       <module name="ssv" target="11" />
     </bytecodeTargetLevel>
