@@ -11,6 +11,7 @@
         <module name="discovery" />
         <module name="jwt" />
         <module name="iiv" />
+        <module name="ssv" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
