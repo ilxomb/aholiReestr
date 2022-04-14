@@ -1,8 +1,6 @@
 package uz.egov.jwt.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin()
 @Tag(name = "Синов", description = "Тизимнинг иш ҳолатини текшириш")
 public class TestController {
-    private static final Logger logger = LogManager.getLogger(TestController.class);
 
     @GetMapping({ "/test" })
     public String test() {

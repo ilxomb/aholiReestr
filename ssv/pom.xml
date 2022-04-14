@@ -8,7 +8,7 @@
         <version>2.6.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>uz.egov</groupId>
+    <groupId>uz.egov.svv</groupId>
     <artifactId>ssv</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ssv</name>

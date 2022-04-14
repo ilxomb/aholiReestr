@@ -1,9 +1,6 @@
 package uz.egov.jwt.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.egov.rest.config.JwtTokenUtil;
-import org.egov.rest.jwt.model.JwtRequest;
-import org.egov.rest.jwt.model.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,6 +9,10 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.bind.annotation.*;
+import uz.egov.jwt.config.JwtTokenUtil;
+import uz.egov.jwt.model.JwtRequest;
+import uz.egov.jwt.model.JwtResponse;
 
 import java.util.Objects;
 

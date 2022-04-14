@@ -28,6 +28,7 @@
       <module name="discovery" options="-parameters" />
       <module name="dpm" options="-parameters" />
       <module name="iiv" options="-parameters" />
+      <module name="jwt" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="ssv" options="-parameters" />
     </option>
