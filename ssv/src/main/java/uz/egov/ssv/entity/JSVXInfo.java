@@ -6,7 +6,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.format.annotation.DateTimeFormat;
+import uz.egov.entity.MainEntity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jsvx_info")
-public class JSVXInformation extends AbsEntity implements Serializable {
+public class JSVXInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
@@ -38,7 +38,7 @@ public class JSVXInformation extends AbsEntity implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JSVXInformation that = (JSVXInformation) o;
+        JSVXInfo that = (JSVXInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 

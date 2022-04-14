@@ -1,6 +1,7 @@
-package uz.egov.ssv.entity;
+package uz.egov.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,26 +17,8 @@ import java.util.UUID;
 
 @MappedSuperclass
 @Data
-public abstract class AbsEntity {
-
-    @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "id", updatable = false, nullable = false, length = 25)
-    @JsonIgnore
-    private UUID id;
-
-    @CreatedBy
-    @JsonIgnore
-    private Integer name;
-
-    @CreationTimestamp
-    @JsonIgnore
-    private Timestamp instime;
-
-    @UpdateTimestamp
-    @JsonIgnore
-    private Timestamp updtime;
-
-
+public abstract class JshshirEntity extends MainEntity {
+    @JsonProperty("jshshir")
+    @Column(length = 14, nullable = false)
+    private String jshshir;
 }

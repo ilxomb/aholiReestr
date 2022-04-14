@@ -5,7 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.springframework.format.annotation.DateTimeFormat;
+import uz.egov.entity.JshshirEntity;
+import uz.egov.entity.MainEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,10 +20,10 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jsvx_data")
-public class JSVXData extends AbsEntity implements Serializable {
-    @JsonProperty("jshshir")
-    @Column(length = 14, nullable = false)
-    private String jshshir;
+public class JSVXData extends JshshirEntity implements Serializable {
+//    @JsonProperty("jshshir")
+//    @Column(length = 14, nullable = false)
+//    private String jshshir;
 
     @JsonProperty("vxjshshir")
     @Column(length = 14, nullable = false)
@@ -56,7 +57,7 @@ public class JSVXData extends AbsEntity implements Serializable {
     @JoinColumn(name = "info_id", nullable = false)
     @ToString.Exclude
     @JsonIgnore
-    private JSVXInformation information;
+    private JSVXInfo information;
 
     @Override
     public boolean equals(Object o) {
