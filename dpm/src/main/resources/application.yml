@@ -1,10 +1,10 @@
 server:
-  port: 8081
+  port: 8083
 spring:
   application:
-    name: ssv
+    name: dpm
   datasource:
-    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
+    url: jdbc:postgresql://localhost:5432/spring?currentSchema=dpm
     username: postgres
     password: 3431215
   jpa:

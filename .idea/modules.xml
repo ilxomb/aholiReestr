@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/dpm/dpm.iml" filepath="$PROJECT_DIR$/dpm/dpm.iml" />
       <module fileurl="file://$PROJECT_DIR$/iiv/iiv.iml" filepath="$PROJECT_DIR$/iiv/iiv.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt/jwt.iml" filepath="$PROJECT_DIR$/jwt/jwt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ssv/ssv.iml" filepath="$PROJECT_DIR$/ssv/ssv.iml" />
     </modules>
   </component>
 </project>
