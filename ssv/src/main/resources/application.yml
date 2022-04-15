@@ -5,7 +5,7 @@ spring:
     name: ssv
   datasource:
 #    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=mh
+    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=mh
     username: postgres
 #    password: 3431215
     password: 1111
