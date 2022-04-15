@@ -55,7 +55,7 @@ public class JXService {
     public List<JSVXInfo> findByDate(Date sana) {
         return jxInfoRepository.findByDate(sana);
     }
-    public List<JSVXInfo> findByJSHSHIR(String jshshir) {
+    public List<JSVXData> findByJSHSHIR(String jshshir) {
         return jxInfoRepository.findByJSHSHIR(jshshir);
     }
 }

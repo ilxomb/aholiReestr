@@ -28,7 +28,7 @@ public class JSVXInfo extends MainEntity implements Serializable {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
     private Date InformationDate;
 
-    @JsonProperty("jsvxdata")
+    @JsonProperty("JSVXData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude

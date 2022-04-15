@@ -21,7 +21,7 @@ public abstract class MainEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "id", updatable = false, nullable = false, length = 25)
+    @Column(name = "id", updatable = false, nullable = false, length = 36)
     @JsonIgnore
     private UUID id;
 

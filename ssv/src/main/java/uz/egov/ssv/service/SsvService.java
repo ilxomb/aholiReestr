@@ -56,7 +56,7 @@ private final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("dd.MM.yy
             data.setComment(dataDtoList.get(i).getComment());
             data.setDisabilityDateEnd(convert(parseDate(dataDtoList.get(i).getDisabilityDateEnd())));
             data.setEpdate(convert(parseDate(dataDtoList.get(i).getEpdate())));
-            data.setJstmInfo(info);
+//            data.setJstmInfo(info);
             dataList.add(data);
         }
         info.setJstmData(dataList);
