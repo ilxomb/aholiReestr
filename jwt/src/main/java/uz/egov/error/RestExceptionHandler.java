@@ -1,4 +1,4 @@
-package uz.egov.ssv.error;
+package uz.egov.error;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

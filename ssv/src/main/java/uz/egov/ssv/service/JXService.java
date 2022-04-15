@@ -7,8 +7,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import uz.egov.ResponseType;
-import uz.egov.ssv.entity.JSVXData;
-import uz.egov.ssv.entity.JSVXInfo;
+import uz.egov.ssv.entity.JsvxData;
+import uz.egov.ssv.entity.JsvxInfo;
 import uz.egov.ssv.repository.JXInfoRepository;
 
 import java.sql.Date;
@@ -22,15 +22,15 @@ public class JXService {
 //    @Autowired
 //    JXDataRepository jxDataRepository;
 
-    public List<ResponseType> save(JSVXInfo jsvxInformation){
+    public List<ResponseType> save(JsvxInfo jsvxInformation){
         System.out.println(jsvxInformation);
-        List<JSVXData> jsvxDataList = jsvxInformation.getJSVXData();
-        for (JSVXData ls: jsvxDataList) {
+        List<JsvxData> jsvxDataList = jsvxInformation.getJSVXData();
+        for (JsvxData ls: jsvxDataList) {
             ls.setInformation(jsvxInformation);
         }
         List<ResponseType> responseList = new ArrayList<ResponseType>();
-        JSVXInfo rt = jxInfoRepository.save(jsvxInformation);
-        for (JSVXData jsvxData : rt.getJSVXData()) {
+        JsvxInfo rt = jxInfoRepository.save(jsvxInformation);
+        for (JsvxData jsvxData : rt.getJSVXData()) {
             ResponseType response = new ResponseType();
             response.setJSHSHIR(jsvxData.getJshshir());
             response.setID_ORG(jsvxData.getId()+"");
@@ -40,22 +40,25 @@ public class JXService {
         return  responseList;
     }
 
-    public List<JSVXInfo> readAll() {
+    public List<JsvxInfo> readAll() {
         return jxInfoRepository.findAll();
     }
-    public List<JSVXInfo> readAll(Integer pageNo, Integer pageSize) {
+    public List<JsvxInfo> readAll(Integer pageNo, Integer pageSize) {
         Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by("instime").descending());
-        Page<JSVXInfo> pagedResult = jxInfoRepository.findAll(paging);
+        Page<JsvxInfo> pagedResult = jxInfoRepository.findAll(paging);
         if(pagedResult.hasContent()) {
             return pagedResult.getContent();
         } else {
-            return new ArrayList<JSVXInfo>();
+            return new ArrayList<JsvxInfo>();
         }
     }
-    public List<JSVXInfo> findByDate(Date sana) {
+    public List<JsvxInfo> findByDate(Date sana) {
         return jxInfoRepository.findByDate(sana);
     }
-    public List<JSVXData> findByJSHSHIR(String jshshir) {
+    public List<JsvxData> findByJSHSHIR(String jshshir) {
+//        JSVXData jsvxData = jxInfoRepository.findByJSHSHIR(jshshir).get(0);
+//        JSVXInfo jsvxInfo = jsvxData.getInformation();
+
         return jxInfoRepository.findByJSHSHIR(jshshir);
     }
 }

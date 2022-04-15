@@ -1,45 +1,49 @@
-package uz.egov.ssv.entity;
+package uz.egov.moliya.entity;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.format.annotation.DateTimeFormat;
 import uz.egov.entity.MainEntity;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
-@Table(name = "jstm_info")
-public class JstmInfo extends MainEntity {
+@Table(name = "jspm_info")
+public class JspmInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
     private Date information_Date;
 
-    @JsonProperty("JSTMData")
+    @JsonProperty("JSPMData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
-    private List<JstmData> jstmData;
+    private List<JspmData> jspmData;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JstmInfo that = (JstmInfo) o;
+        JspmInfo that = (JspmInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 
@@ -47,4 +51,5 @@ public class JstmInfo extends MainEntity {
     public int hashCode() {
         return getClass().hashCode();
     }
+
 }

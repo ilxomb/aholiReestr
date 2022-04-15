@@ -1,4 +1,4 @@
-package uz.egov.ssv.error;
+package uz.egov.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

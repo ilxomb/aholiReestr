@@ -8,45 +8,81 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.egov.ssv.entity.JSVXInfo;
+import uz.egov.ssv.entity.JsvxInfo;
+import uz.egov.ssv.entity.JstmInfo;
+import uz.egov.ssv.service.JMService;
 import uz.egov.ssv.service.JXService;
 
-import java.sql.Date;
+import java.sql.*;
 import java.util.List;
 
 @RestController
 @CrossOrigin()
-@RequestMapping("/api/jx")
+@RequestMapping("/api")
 @SecurityRequirement(name = "JWT token")
 @Tag(name = "Соғлиқни сақлаш вазирлиги", description = "©")
 public class JXController {
     @Autowired
     JXService jxService;
 
+    @Autowired
+    JMService jmService;
+
+
+    //8.1. Жисмоний шахснинг тиббий маълумотларини етказиб бериш
+    @PostMapping("/jm/add")
+    @Operation(summary = "Тиббий маълумотнома киритиш", description = "Жисмоний шахснинг тиббий маълумотларини етказиб бериш")
+    public ResponseEntity<?> add_jm(@RequestBody JstmInfo jstmInformation) throws Exception {
+        return ResponseEntity.ok(jmService.save(jstmInformation));
+    }
+
+    @GetMapping("/jm/list")
+    @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
+    public ResponseEntity<?> list_jm( @RequestParam(defaultValue = "0") Integer pageNo,
+                                   @RequestParam(defaultValue = "10") Integer pageSize){
+        List<JstmInfo> list = jmService.readAll(pageNo, pageSize);
+        return new ResponseEntity<List<JstmInfo>>(list, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping("/jm/list/{sana}")
+    @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг тиббий маълумотларини олиш")
+    public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") String sana) throws Exception {
+        Date d1 = Date.valueOf(sana);
+        return ResponseEntity.ok(jmService.findByDate(d1));
+    }
+
+    @GetMapping("/jm/find/{jshshir}")
+    @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг тиббий маълумотларини олиш")
+    public ResponseEntity<?> list_jm_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
+        return ResponseEntity.ok(jmService.findByJSHSHIR(jshshir));
+    }
+
+
+
+
     //8.2. Жисмоний шахснинг васийлик, ҳомийлик маълумотларини етказиб бериш
-    @PostMapping("/add")
+    @PostMapping("/jx/add")
     @Operation(summary = "Васийлик, ҳомийлик маълумот киритиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини етказиб бериш")
-    public ResponseEntity<?> saqla(@RequestBody JSVXInfo jsvxInformation){
-        System.out.println("jsvxInformation = " + jsvxInformation);
+    public ResponseEntity<?> add_jx(@RequestBody JsvxInfo jsvxInformation){
         return ResponseEntity.ok(jxService.save(jsvxInformation));
     }
-    @GetMapping("/list")
+    @GetMapping("/jx/list")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
-    public ResponseEntity<?> list( @RequestParam(defaultValue = "0") Integer pageNo,
+    public ResponseEntity<?> list_jx( @RequestParam(defaultValue = "0") Integer pageNo,
                                    @RequestParam(defaultValue = "10") Integer pageSize){
-        List<JSVXInfo> list = jxService.readAll(pageNo, pageSize);
-        return new ResponseEntity<List<JSVXInfo>>(list, new HttpHeaders(), HttpStatus.OK);
+        List<JsvxInfo> list = jxService.readAll(pageNo, pageSize);
+        return new ResponseEntity<List<JsvxInfo>>(list, new HttpHeaders(), HttpStatus.OK);
     }
-    @GetMapping("/list/{sana}")
+    @GetMapping("/jx/list/{sana}")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
-    public ResponseEntity<?> list_by_date(@PathVariable(name = "sana") String sana){
+    public ResponseEntity<?> list_jx_by_date(@PathVariable(name = "sana") String sana){
         Date d1 = Date.valueOf(sana);
         return ResponseEntity.ok(jxService.findByDate(d1));
     }
 
-    @GetMapping("/find/{jshshir}")
+    @GetMapping("/jx/find/{jshshir}")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
-    public ResponseEntity<?> list_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
+    public ResponseEntity<?> list_jx_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
         return ResponseEntity.ok(jxService.findByJSHSHIR(jshshir));
     }
 }

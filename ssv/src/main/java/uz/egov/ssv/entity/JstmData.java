@@ -1,5 +1,7 @@
 package uz.egov.ssv.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -17,6 +19,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@Table(name = "jstm_data")
 public class JstmData extends JshshirEntity {
 
     @JsonProperty("kgroup")
@@ -38,11 +41,11 @@ public class JstmData extends JshshirEntity {
     private String disabilityReason;    //Ногиронлик сабаби	String	2 та белги, маълумотнома асосида	[0..1]
 
     @JsonProperty("disabilitydatestart")
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date disabilityDateStart;    //Шахсни ногирон деб тан олинган сана	Date 		[0..1]
 
     @JsonProperty("disabilitydateend")
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date disabilityDateEnd;    //Ногиронлик тугаш санаси	Date		[0..1]
 
     @JsonProperty("referenceseries")
@@ -75,7 +78,7 @@ public class JstmData extends JshshirEntity {
     private Integer ekriteria_7;    //Меҳнат фаолияти билан шуғулланиш лаёқати	Int		[0..1]
 
     @JsonProperty("epdate")
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date epdate;    //Расмийлаштирилган сана (агар меҳнатда майибланганлик фоизи бўлса, протокол расмийлаштирилган сана)	Date		[0..1]
 
     @JsonProperty("comment")
@@ -85,6 +88,7 @@ public class JstmData extends JshshirEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "info_id", nullable = false)
     @ToString.Exclude
+    @JsonIgnore
     private JstmInfo information;
 
 

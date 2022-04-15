@@ -22,23 +22,23 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jsvx_info")
-public class JSVXInfo extends MainEntity implements Serializable {
+public class JsvxInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
-    private Date InformationDate;
+    private Date information_Date;
 
     @JsonProperty("JSVXData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
-    private List<JSVXData> JSVXData;
+    private List<JsvxData> JSVXData;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JSVXInfo that = (JSVXInfo) o;
+        JsvxInfo that = (JsvxInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 
