@@ -3,18 +3,21 @@ package uz.egov.jwt_rsa.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import uz.egov.jwt_rsa.model.CertEntity;
+import uz.egov.jwt_rsa.repo.CertRepository;
+import uz.egov.jwt_rsa.repo.UserRepository;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
 import java.security.PublicKey;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -22,6 +25,11 @@ import java.util.function.Function;
 public class JwtTokenUtil implements Serializable {
 
 	private static final long serialVersionUID = -2550185165626007488L;
+
+	@Autowired
+	private CertRepository repo;
+
+
 
 	public String getUsernameFromToken(String token) {
 		return getClaimFromToken(token, Claims::getSubject);
@@ -44,14 +52,21 @@ public class JwtTokenUtil implements Serializable {
 		Claims claims = null;
 		try {
 			// Certificate X.509
-			FileInputStream fin = new FileInputStream("d:/temp/cn.cer");
+			List<CertEntity> certList = repo.findAll();
+			CertEntity certEntity = certList.get(0);
+
+//			FileInputStream fin = new FileInputStream("d:/temp/cn.cer");
 			CertificateFactory f = CertificateFactory.getInstance("X.509");
-			X509Certificate certificate = (X509Certificate)f.generateCertificate(fin);
+//			X509Certificate certificate = (X509Certificate)f.generateCertificate(fin);
+
+			InputStream in = new ByteArrayInputStream(certEntity.getData());
+			X509Certificate certificate = (X509Certificate)f.generateCertificate(in);
+
 			PublicKey publicKey = certificate.getPublicKey();
 			claims = Jwts.parser().setSigningKey(publicKey)
 					.parseClaimsJws(token)
 					.getBody();
-		} catch (IOException | CertificateException e) {
+		} catch (CertificateException e) {
 			e.printStackTrace();
 		}
 //		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();

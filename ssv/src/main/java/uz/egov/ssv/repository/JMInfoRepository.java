@@ -21,7 +21,7 @@ public interface JMInfoRepository extends JpaRepository<JstmInfo, UUID> {
 
     Page<JstmInfo> findAll(Pageable pageable);
 
-    @Query(value = "SELECT t FROM JstmInfo t WHERE date(InformationDate)=:sana", nativeQuery = true)
+    @Query("SELECT t FROM JstmInfo t WHERE date(InformationDate)=:sana")
     List<JstmInfo> findByDate(@Param("sana") Date sana);
 
 //    @Query("SELECT t FROM JstmInfo t, JstmData d WHERE t.id=d.information and d.jshshir=:jshshir")
