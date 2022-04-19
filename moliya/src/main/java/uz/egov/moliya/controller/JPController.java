@@ -55,11 +55,11 @@ public class JPController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(array = @ArraySchema(schema = @Schema(implementation = JspmInfo.class))))})
-    public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") String sana) throws Exception {
-        System.out.println("sana: " + sana);
-        Date d1 = Date.valueOf(sana);
-        System.out.println("d1: " + d1);
-        return ResponseEntity.ok(jpService.findByDate(d1));
+    public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") Date sana) throws Exception {
+//        System.out.println("sana: " + sana);
+//        Date d1 = Date.valueOf(sana);
+//        System.out.println("d1: " + d1);
+        return ResponseEntity.ok(jpService.findByDate(sana));
     }
 
     @GetMapping("/jp/find/{jshshir}")

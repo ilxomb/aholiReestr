@@ -61,9 +61,9 @@ public class JXController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(array = @ArraySchema(schema = @Schema(implementation = JstmInfo.class))))})
-    public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") String sana) throws Exception {
-        Date d1 = Date.valueOf(sana);
-        return ResponseEntity.ok(jmService.findByDate(d1));
+    public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") Date sana) throws Exception {
+//        Date d1 = Date.valueOf(sana);
+        return ResponseEntity.ok(jmService.findByDate(sana));
     }
 
     @GetMapping("/jm/find/{jshshir}")
@@ -102,9 +102,9 @@ public class JXController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(array = @ArraySchema(schema = @Schema(implementation = JsvxInfo.class))))})
-    public ResponseEntity<?> list_jx_by_date(@PathVariable(name = "sana") String sana){
-        Date d1 = Date.valueOf(sana);
-        return ResponseEntity.ok(jxService.findByDate(d1));
+    public ResponseEntity<?> list_jx_by_date(@PathVariable(name = "sana") java.sql.Date sana){
+//        Date d1 = sana; //Date.valueOf(sana);
+        return ResponseEntity.ok(jxService.findByDate(sana));
     }
 
     @GetMapping("/jx/find/{jshshir}")
