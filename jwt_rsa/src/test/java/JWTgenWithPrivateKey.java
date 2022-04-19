@@ -25,11 +25,10 @@ public class JWTgenWithPrivateKey {
     public static void main(String[] args) throws Exception {
 
         System.out.println("load keys");
-        Map<String, Object> rsaKeys = null;
+        PublicKey publicKey = null;
+        PrivateKey privateKey = null;
         String password = "1111";
-
         try {
-            rsaKeys = new HashMap<String, Object>();
             // JKS java key store
 //            File file = new File("d:/temp/file.jks");
 //            InputStream is = new FileInputStream(file);
@@ -38,8 +37,8 @@ public class JWTgenWithPrivateKey {
 //            keystore.load(is, password.toCharArray());
 //            KeyStore.PrivateKeyEntry keyEnt =
 //                    (KeyStore.PrivateKeyEntry) keystore.getEntry("cn",new KeyStore.PasswordProtection(password.toCharArray()));
-//            PrivateKey privateKey = keyEnt.getPrivateKey();
-//            rsaKeys.put("private", (PrivateKey) privateKey);
+//            privateKey = keyEnt.getPrivateKey();
+//
 
             // PFX key store
             File file_pfx = new File("d:/temp/cn.pfx");
@@ -49,22 +48,17 @@ public class JWTgenWithPrivateKey {
             keystore_pfx.load(is_pfx, password.toCharArray());
             KeyStore.PrivateKeyEntry keyEnt_pfx =
                     (KeyStore.PrivateKeyEntry) keystore_pfx.getEntry("cn",new KeyStore.PasswordProtection(password.toCharArray()));
-            PrivateKey privateKey_pfx = keyEnt_pfx.getPrivateKey();
-            rsaKeys.put("private", (PrivateKey) privateKey_pfx);
+            privateKey = keyEnt_pfx.getPrivateKey();
 
             // Certificate X.509
             FileInputStream fin = new FileInputStream("d:/temp/cn.cer");
             CertificateFactory f = CertificateFactory.getInstance("X.509");
             X509Certificate certificate = (X509Certificate)f.generateCertificate(fin);
-            PublicKey publicKey = certificate.getPublicKey();
-            rsaKeys.put("public", (PublicKey) publicKey);
+            publicKey = certificate.getPublicKey();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        PublicKey publicKey = (PublicKey) rsaKeys.get("public");
-        PrivateKey privateKey = (PrivateKey) rsaKeys.get("private");
-
 
         System.out.println("publicKey");
         byte[] pubBytes = publicKey.getEncoded();
@@ -80,7 +74,6 @@ public class JWTgenWithPrivateKey {
         System.out.println("");
         System.out.println(pemString);
         System.out.println("");
-
 
 
         String token = generateToken(privateKey);
