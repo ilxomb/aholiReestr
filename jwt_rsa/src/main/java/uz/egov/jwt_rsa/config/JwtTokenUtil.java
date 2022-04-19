@@ -1,4 +1,4 @@
-package uz.egov.jwt.config;
+package uz.egov.jwt_rsa.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -6,22 +6,22 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.Serializable;
+import java.security.PublicKey;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 import java.util.function.Function;
 
 @Component
 public class JwtTokenUtil implements Serializable {
 
 	private static final long serialVersionUID = -2550185165626007488L;
-	
-	public static final long JWT_TOKEN_VALIDITY = 5*60*60;
-
-//	@Value("${jwt.secret}")
-	private String secret = "secret"; //UUID.randomUUID().toString();
 
 	public String getUsernameFromToken(String token) {
 		return getClaimFromToken(token, Claims::getSubject);
@@ -41,7 +41,21 @@ public class JwtTokenUtil implements Serializable {
 	}
 
 	private Claims getAllClaimsFromToken(String token) {
-		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+		Claims claims = null;
+		try {
+			// Certificate X.509
+			FileInputStream fin = new FileInputStream("d:/temp/cn.cer");
+			CertificateFactory f = CertificateFactory.getInstance("X.509");
+			X509Certificate certificate = (X509Certificate)f.generateCertificate(fin);
+			PublicKey publicKey = certificate.getPublicKey();
+			claims = Jwts.parser().setSigningKey(publicKey)
+					.parseClaimsJws(token)
+					.getBody();
+		} catch (IOException | CertificateException e) {
+			e.printStackTrace();
+		}
+//		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+		return claims;
 	}
 
 	private Boolean isTokenExpired(String token) {
@@ -52,16 +66,6 @@ public class JwtTokenUtil implements Serializable {
 	private Boolean ignoreTokenExpiration(String token) {
 		// here you specify tokens, for that the expiration is ignored
 		return false;
-	}
-
-	public String generateToken(UserDetails userDetails) {
-		Map<String, Object> claims = new HashMap<>();
-		return doGenerateToken(claims, userDetails.getUsername());
-	}
-
-	private String doGenerateToken(Map<String, Object> claims, String subject) {
-		return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY*1000)).signWith(SignatureAlgorithm.HS512, secret).compact();
 	}
 
 	public Boolean canTokenBeRefreshed(String token) {

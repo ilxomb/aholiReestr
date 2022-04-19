@@ -41,7 +41,9 @@ public class JPController {
     @GetMapping("/jp/list/{sana}")
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг тиббий маълумотларини олиш")
     public ResponseEntity<?> list_jm_by_date(@PathVariable(name = "sana") String sana) throws Exception {
+        System.out.println("sana: " + sana);
         Date d1 = Date.valueOf(sana);
+        System.out.println("d1: " + d1);
         return ResponseEntity.ok(jpService.findByDate(d1));
     }
 
