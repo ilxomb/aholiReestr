@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 @Getter
@@ -26,7 +26,7 @@ public class JsvxInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
-    private Date information_Date;
+    private Timestamp information_Date;
 
     @JsonProperty("JSVXData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)

@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.egov.ResponseType;
+import uz.egov.moliya.entity.JspmData;
 import uz.egov.moliya.entity.JspmInfo;
 import uz.egov.moliya.service.JPService;
 
@@ -66,7 +67,7 @@ public class JPController {
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг тиббий маълумотларини олиш")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JspmInfo.class))))})
+                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JspmData.class))))})
     public ResponseEntity<?> list_jm_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
         return ResponseEntity.ok(jpService.findByJSHSHIR(jshshir));
     }

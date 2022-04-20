@@ -8,7 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/jwt/jwt.iml" filepath="$PROJECT_DIR$/jwt/jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" filepath="$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" />
       <module fileurl="file://$PROJECT_DIR$/moliya/moliya.iml" filepath="$PROJECT_DIR$/moliya/moliya.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mudofa/mudofa.iml" filepath="$PROJECT_DIR$/mudofa/mudofa.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssv/ssv.iml" filepath="$PROJECT_DIR$/ssv/ssv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xalqtaim/xalqtaim.iml" filepath="$PROJECT_DIR$/xalqtaim/xalqtaim.iml" />
     </modules>
   </component>
 </project>

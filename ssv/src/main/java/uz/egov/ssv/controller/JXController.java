@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.egov.ResponseType;
+import uz.egov.ssv.entity.JstmData;
+import uz.egov.ssv.entity.JsvxData;
 import uz.egov.ssv.entity.JsvxInfo;
 import uz.egov.ssv.entity.JstmInfo;
 import uz.egov.ssv.service.JMService;
@@ -70,7 +72,7 @@ public class JXController {
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг тиббий маълумотларини олиш")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JstmInfo.class))))})
+                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JstmData.class))))})
     public ResponseEntity<?> list_jm_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
         return ResponseEntity.ok(jmService.findByJSHSHIR(jshshir));
     }
@@ -111,7 +113,7 @@ public class JXController {
     @Operation(summary = "Киритилган маълумотни олиш", description = "Жисмоний шахснинг васийлик, ҳомийлик маълумотларини олиш")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JsvxInfo.class))))})
+                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = JsvxData.class))))})
     public ResponseEntity<?> list_jx_by_jshshir(@PathVariable(name = "jshshir") String jshshir){
         return ResponseEntity.ok(jxService.findByJSHSHIR(jshshir));
     }

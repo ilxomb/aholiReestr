@@ -12,7 +12,7 @@ import uz.egov.entity.MainEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
 
 @Getter

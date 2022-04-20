@@ -14,6 +14,8 @@
         <module name="ssv" />
         <module name="moliya" />
         <module name="jwt_rsa" />
+        <module name="xalqtaim" />
+        <module name="mudofa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,7 +25,9 @@
       <module name="jwt" target="11" />
       <module name="jwt_rsa" target="11" />
       <module name="moliya" target="11" />
+      <module name="mudofa" target="11" />
       <module name="ssv" target="11" />
+      <module name="xalqtaim" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -34,7 +38,9 @@
       <module name="jwt" options="-parameters" />
       <module name="jwt_rsa" options="-parameters" />
       <module name="moliya" options="-parameters" />
+      <module name="mudofa" options="-parameters" />
       <module name="ssv" options="-parameters" />
+      <module name="xalqtaim" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,11 +1,11 @@
-package uz.egov.moliya.entity;
+package uz.egov.mudofa.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.OnDelete;
@@ -16,34 +16,31 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "jspm_info")
-public class JspmInfo extends MainEntity implements Serializable {
-
+@Table(name = "jshm_info")
+public class JshmInfo extends MainEntity {
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
-    private Timestamp information_Date;
+    protected Timestamp information_Date;
 
-    @JsonProperty("JSPMData")
+    @JsonProperty("JSHMData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
-    private List<JspmData> jspmData;
+    protected List<JshmData> JSHMData;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JspmInfo that = (JspmInfo) o;
+        JshmInfo that = (JshmInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 
@@ -51,5 +48,4 @@ public class JspmInfo extends MainEntity implements Serializable {
     public int hashCode() {
         return getClass().hashCode();
     }
-
 }

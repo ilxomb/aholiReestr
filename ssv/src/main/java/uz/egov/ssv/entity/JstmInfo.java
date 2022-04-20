@@ -9,14 +9,12 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.format.annotation.DateTimeFormat;
 import uz.egov.entity.MainEntity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -27,7 +25,7 @@ public class JstmInfo extends MainEntity {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
-    private Date information_Date;
+    private Timestamp information_Date;
 
     @JsonProperty("JSTMData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
