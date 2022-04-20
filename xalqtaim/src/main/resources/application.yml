@@ -2,7 +2,7 @@ server:
   port: 8084
 spring:
   application:
-    name: mudofa
+    name: xalqtalim
   datasource:
 #    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
     url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=mpe

@@ -12,6 +12,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import uz.egov.entity.MainEntity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +22,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Entity
 @Table(name = "jstm_info")
-public class JstmInfo extends MainEntity {
+public class JstmInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")

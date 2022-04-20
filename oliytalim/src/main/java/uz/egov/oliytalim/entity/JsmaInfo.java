@@ -1,5 +1,4 @@
-package uz.egov.mudofa.entity;
-
+package uz.egov.oliytalim.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,27 +20,28 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "jshm_info")
-public class JshmInfo extends MainEntity implements Serializable {
+@Table(name = "jsma_info")
+public class JsmaInfo extends MainEntity implements Serializable {
+
     @JsonProperty("information_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd.MM.yyyy HH:mm:ss")
-    protected Timestamp information_Date;
-
-    @JsonProperty("JSHMData")
+    protected Timestamp information_date;
+    @JsonProperty("JSMAData")
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
-    protected List<JshmData> JSHMData;
+    protected List<JsmaData> JSMAData;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JshmInfo that = (JshmInfo) o;
+        JsmaInfo that = (JsmaInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 
@@ -50,3 +50,5 @@ public class JshmInfo extends MainEntity implements Serializable {
         return getClass().hashCode();
     }
 }
+
+

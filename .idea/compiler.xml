@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dpm" />
+        <module name="oliytalim" />
         <module name="discovery" />
         <module name="jwt" />
         <module name="iiv" />
         <module name="ssv" />
+        <module name="oliyatestatsiya" />
         <module name="moliya" />
         <module name="jwt_rsa" />
         <module name="xalqtaim" />
@@ -26,6 +28,8 @@
       <module name="jwt_rsa" target="11" />
       <module name="moliya" target="11" />
       <module name="mudofa" target="11" />
+      <module name="oliyatestatsiya" target="11" />
+      <module name="oliytalim" target="11" />
       <module name="ssv" target="11" />
       <module name="xalqtaim" target="11" />
     </bytecodeTargetLevel>
@@ -39,6 +43,8 @@
       <module name="jwt_rsa" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="mudofa" options="-parameters" />
+      <module name="oliyatestatsiya" options="-parameters" />
+      <module name="oliytalim" options="-parameters" />
       <module name="ssv" options="-parameters" />
       <module name="xalqtaim" options="-parameters" />
     </option>

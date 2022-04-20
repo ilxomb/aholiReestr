@@ -9,6 +9,7 @@ import org.hibernate.Hibernate;
 import uz.egov.entity.JshshirEntity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jsma_data")
-public class JsmaData extends JshshirEntity {
+public class JsmaData extends JshshirEntity implements Serializable {
 
     @JsonProperty("mname")
     protected String MName; //Умумий таълим муассасасининг номи	String	255 тагача белги	[1]

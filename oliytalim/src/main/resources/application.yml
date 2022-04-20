@@ -1,11 +1,11 @@
 server:
-  port: 8082
+  port: 8085
 spring:
   application:
-    name: moliya
+    name: oliytalim
   datasource:
 #    url: jdbc:postgresql://localhost:5432/spring?currentSchema=mh
-    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=mf
+    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=mhsse
     username: postgres
 #    password: 3431215
     password: 1111

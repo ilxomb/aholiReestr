@@ -1,4 +1,4 @@
-package uz.egov.mudofa.entity;
+package uz.egov.oak.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -8,11 +8,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import uz.egov.entity.JshshirEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -20,28 +23,33 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table(name = "jshm_data")
-public class JshmData extends JshshirEntity implements Serializable {
+@Table(name = "jsid_data")
+public class JsidData extends JshshirEntity implements Serializable {
 
-    @JsonProperty("hhindate")
+    @JsonProperty("idaraja")
+    @Column(length = 2)
+    protected String Idaraja; //	Илмий даража	String	2 та белги, маълумотнома асосида	[1]
+    @JsonProperty("unvon")
+    @Column(length = 2)
+    protected String Unvon; //	Унвон тури	Date 	2 та белги, маълумотнома асосида	[1]
+    @JsonProperty("iin")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    protected Date HHinDate; //Ҳарбий ҳисобга биринчи марта қўйилган сана	Date		[1]
-    @JsonProperty("hhoutdate")
+    protected Date Iin; //	Берилган сана	Date		[1]
+    @JsonProperty("iout")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    protected Date HHoutDate; //Ҳарбий ҳисобдан охирги марта чиқарилган (четлатилган) сана	Date		[0..1]
+    protected Date Iout; //	Маҳрум этилган сана	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "info_id", nullable = false)
     @ToString.Exclude
     @JsonIgnore
-    private JshmInfo information;
-
+    private JsidInfo information;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JshmData that = (JshmData) o;
+        JsidData that = (JsidData) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 

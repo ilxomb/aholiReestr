@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import uz.egov.entity.JshshirEntity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -20,7 +21,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jstm_data")
-public class JstmData extends JshshirEntity {
+public class JstmData extends JshshirEntity implements Serializable {
 
     @JsonProperty("kgroup")
     @Column(length = 2)
