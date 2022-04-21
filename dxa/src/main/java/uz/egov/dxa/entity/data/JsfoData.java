@@ -24,8 +24,6 @@ import java.util.Objects;
 @Table(name = "jsbt_data")
 public class JsfoData extends JshshirEntity implements Serializable {
 
-    //JSHSHIR	ЖШШИР	String	14 та белги	[1]
-    //Фарзандликка олувчи тўғрисидаги маълумотлар
     @JsonProperty("fojshshir")
     @Column(length = 14)
     private String FOJSHSHIR; //ЖШШИР	String	14 та белги	[1]

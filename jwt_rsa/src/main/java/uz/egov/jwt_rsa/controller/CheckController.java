@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin()
 @RequestMapping("/rest-api")
 @SecurityRequirement(name = "JWT token")
-@Tag(name = "Check JWT token", description = "Тизимнинг иш ҳолатини текшириш")
+@Tag(name = "Синов JWT token", description = "Тизимнинг иш ҳолатини текшириш")
 public class CheckController {
 
 

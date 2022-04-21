@@ -36,7 +36,6 @@ public class JXController {
     @Autowired
     JMService jmService;
 
-
     //8.1. Жисмоний шахснинг тиббий маълумотларини етказиб бериш
     @PostMapping("/jm/add")
     @Operation(summary = "Тиббий маълумотнома киритиш", description = "Жисмоний шахснинг тиббий маълумотларини етказиб бериш")
