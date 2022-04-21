@@ -21,22 +21,22 @@ public class JPService {
     @Autowired
     JPInfoRepository jpInfoRepository;
 
-    public List<ResponseType> save(JspmInfo JspmInfo){
-        List<JspmData> jspmDataList = JspmInfo.getJspmData();
+    public List<ResponseType> save(JspmInfo jspmInfo){
+        List<JspmData> jspmDataList = jspmInfo.getJspmData();
         for (JspmData ls: jspmDataList) {
-            ls.setInformation(JspmInfo);
+            ls.setInformation(jspmInfo);
             List<StajALL> stajList = ls.getStajALL();
             for (StajALL st: stajList) {
                 st.setData(ls);
             }
         }
         List<ResponseType> responseList = new ArrayList<ResponseType>();
-        JspmInfo rt = jpInfoRepository.save(JspmInfo);
-        for (JspmData JspmData : rt.getJspmData()) {
+        JspmInfo rt = jpInfoRepository.save(jspmInfo);
+        for (JspmData jspmData : rt.getJspmData()) {
             ResponseType response = new ResponseType();
-            response.setJSHSHIR(JspmData.getJshshir());
-            response.setID_ORG(JspmData.getId()+"");
-            response.setRECEIVE_TIME_ORG(JspmData.getInstime());
+            response.setJSHSHIR(jspmData.getJshshir());
+            response.setID_ORG(jspmData.getId()+"");
+            response.setRECEIVE_TIME_ORG(jspmData.getInstime());
             responseList.add(response);
         }
         return  responseList;

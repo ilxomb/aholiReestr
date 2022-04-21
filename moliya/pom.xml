@@ -12,7 +12,7 @@
     <artifactId>moliya</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>moliya</name>
-    <description>moliya</description>
+    <description>Молия вазирлиги</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.1</spring-cloud.version>

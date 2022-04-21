@@ -21,17 +21,17 @@ public class JMService {
     JMInfoRepository jmInfoRepository;
 
     public List<ResponseType> save(JstmInfo jstmInfo){
-        List<JstmData> jsvxDataList = jstmInfo.getJstmData();
-        for (JstmData ls: jsvxDataList) {
+        List<JstmData> jstmDataList = jstmInfo.getJstmData();
+        for (JstmData ls: jstmDataList) {
             ls.setInformation(jstmInfo);
         }
         List<ResponseType> responseList = new ArrayList<ResponseType>();
         JstmInfo rt = jmInfoRepository.save(jstmInfo);
-        for (JstmData JstmData : rt.getJstmData()) {
+        for (JstmData jstmData : rt.getJstmData()) {
             ResponseType response = new ResponseType();
-            response.setJSHSHIR(JstmData.getJshshir());
-            response.setID_ORG(JstmData.getId()+"");
-            response.setRECEIVE_TIME_ORG(JstmData.getInstime());
+            response.setJSHSHIR(jstmData.getJshshir());
+            response.setID_ORG(jstmData.getId()+"");
+            response.setRECEIVE_TIME_ORG(jstmData.getInstime());
             responseList.add(response);
         }
         return  responseList;

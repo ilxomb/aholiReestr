@@ -33,11 +33,11 @@ public class JOService {
         }
         List<ResponseType> responseList = new ArrayList<ResponseType>();
         JsmaInfo rt = joInfoRepository.save(jsmaInfo);
-        for (JsmaData JsmaData : rt.getJSMAData()) {
+        for (JsmaData jsmaData : rt.getJSMAData()) {
             ResponseType response = new ResponseType();
-            response.setJSHSHIR(JsmaData.getJshshir());
-            response.setID_ORG(JsmaData.getId()+"");
-            response.setRECEIVE_TIME_ORG(JsmaData.getInstime());
+            response.setJSHSHIR(jsmaData.getJshshir());
+            response.setID_ORG(jsmaData.getId()+"");
+            response.setRECEIVE_TIME_ORG(jsmaData.getInstime());
             responseList.add(response);
         }
         return  responseList;

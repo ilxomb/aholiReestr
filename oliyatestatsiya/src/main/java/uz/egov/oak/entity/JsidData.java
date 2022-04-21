@@ -33,10 +33,10 @@ public class JsidData extends JshshirEntity implements Serializable {
     @Column(length = 2)
     protected String Unvon; //	Унвон тури	Date 	2 та белги, маълумотнома асосида	[1]
     @JsonProperty("iin")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     protected Date Iin; //	Берилган сана	Date		[1]
     @JsonProperty("iout")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     protected Date Iout; //	Маҳрум этилган сана	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

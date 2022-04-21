@@ -83,7 +83,7 @@ public class JstmData extends JshshirEntity implements Serializable {
     private Date epdate;    //Расмийлаштирилган сана (агар меҳнатда майибланганлик фоизи бўлса, протокол расмийлаштирилган сана)	Date		[0..1]
 
     @JsonProperty("comment")
-    @Column(columnDefinition = "text")
+    @Column(length = 1000, columnDefinition = "text")
     private String comment;    //Изоҳ (қўшимча маълумотлар)	String	1000 тагача белги	[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

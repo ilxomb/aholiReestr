@@ -8,27 +8,31 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dpm" />
-        <module name="oliytalim" />
-        <module name="discovery" />
         <module name="jwt" />
-        <module name="iiv" />
-        <module name="ssv" />
         <module name="oliyatestatsiya" />
         <module name="moliya" />
+        <module name="oliysud" />
+        <module name="dxa" />
+        <module name="mudofa" />
+        <module name="oliytalim" />
+        <module name="discovery" />
+        <module name="iiv" />
+        <module name="ssv" />
         <module name="jwt_rsa" />
         <module name="xalqtaim" />
-        <module name="mudofa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="discovery" target="11" />
       <module name="dpm" target="11" />
+      <module name="dxa" target="11" />
       <module name="iiv" target="11" />
       <module name="jwt" target="11" />
       <module name="jwt_rsa" target="11" />
       <module name="moliya" target="11" />
       <module name="mudofa" target="11" />
       <module name="oliyatestatsiya" target="11" />
+      <module name="oliysud" target="11" />
       <module name="oliytalim" target="11" />
       <module name="ssv" target="11" />
       <module name="xalqtaim" target="11" />
@@ -38,12 +42,14 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="discovery" options="-parameters" />
       <module name="dpm" options="-parameters" />
+      <module name="dxa" options="-parameters" />
       <module name="iiv" options="-parameters" />
       <module name="jwt" options="-parameters" />
       <module name="jwt_rsa" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="mudofa" options="-parameters" />
       <module name="oliyatestatsiya" options="-parameters" />
+      <module name="oliysud" options="-parameters" />
       <module name="oliytalim" options="-parameters" />
       <module name="ssv" options="-parameters" />
       <module name="xalqtaim" options="-parameters" />

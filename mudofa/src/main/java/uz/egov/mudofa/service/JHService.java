@@ -27,11 +27,11 @@ public class JHService {
         }
         List<ResponseType> responseList = new ArrayList<ResponseType>();
         JshmInfo rt = jhInfoRepository.save(jshmInfo);
-        for (JshmData JshmData : rt.getJSHMData()) {
+        for (JshmData jshmData : rt.getJSHMData()) {
             ResponseType response = new ResponseType();
-            response.setJSHSHIR(JshmData.getJshshir());
-            response.setID_ORG(JshmData.getId()+"");
-            response.setRECEIVE_TIME_ORG(JshmData.getInstime());
+            response.setJSHSHIR(jshmData.getJshshir());
+            response.setID_ORG(jshmData.getId()+"");
+            response.setRECEIVE_TIME_ORG(jshmData.getInstime());
             responseList.add(response);
         }
         return  responseList;

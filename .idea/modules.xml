@@ -4,12 +4,14 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/discovery/discovery.iml" filepath="$PROJECT_DIR$/discovery/discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/dpm/dpm.iml" filepath="$PROJECT_DIR$/dpm/dpm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dxa/dxa.iml" filepath="$PROJECT_DIR$/dxa/dxa.iml" />
       <module fileurl="file://$PROJECT_DIR$/iiv/iiv.iml" filepath="$PROJECT_DIR$/iiv/iiv.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt/jwt.iml" filepath="$PROJECT_DIR$/jwt/jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" filepath="$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" />
       <module fileurl="file://$PROJECT_DIR$/moliya/moliya.iml" filepath="$PROJECT_DIR$/moliya/moliya.iml" />
       <module fileurl="file://$PROJECT_DIR$/mudofa/mudofa.iml" filepath="$PROJECT_DIR$/mudofa/mudofa.iml" />
       <module fileurl="file://$PROJECT_DIR$/oliyatestatsiya/oliyatestatsiya.iml" filepath="$PROJECT_DIR$/oliyatestatsiya/oliyatestatsiya.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oliysud/oliysud.iml" filepath="$PROJECT_DIR$/oliysud/oliysud.iml" />
       <module fileurl="file://$PROJECT_DIR$/oliytalim/oliytalim.iml" filepath="$PROJECT_DIR$/oliytalim/oliytalim.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssv/ssv.iml" filepath="$PROJECT_DIR$/ssv/ssv.iml" />
       <module fileurl="file://$PROJECT_DIR$/xalqtaim/xalqtaim.iml" filepath="$PROJECT_DIR$/xalqtaim/xalqtaim.iml" />
