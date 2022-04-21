@@ -29,7 +29,6 @@ import java.util.List;
 @RequestMapping("/api")
 @SecurityRequirement(name = "JWT token")
 @Tag(name = "Адлия вазирлиги (8.5.)", description = "Жисмоний шахсга оид маълумотлар ўзгартирилганлиги бўйича маълумотлар")
-
 public class JsumController {
 
     //8.5. Жисмоний шахсга оид маълумотлар ўзгартирилганлиги бўйича маълумотларни етказиб бериш
