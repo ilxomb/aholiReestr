@@ -41,7 +41,7 @@ public class JsqmData extends JshshirEntity implements Serializable {
     @Column(length = 100)
     private String OTAIsm; //Отасининг исми	String	100 тагача белги	[0..1]
     @JsonProperty("otadata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date OTAData; //Отасининг туғилган санаси	Date		[0..1]
     @JsonProperty("otatjoy")
     @Column(length = 255)
@@ -59,7 +59,7 @@ public class JsqmData extends JshshirEntity implements Serializable {
     @Column(length = 100)
     private String ONAIsm; //Онасининг исми	String	100 тагача белги	[0..1]
     @JsonProperty("onadata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date ONAData; //Онасининг туғилган санаси	Date		[0..1]
     @JsonProperty("onatjoy")
     @Column(length = 255)

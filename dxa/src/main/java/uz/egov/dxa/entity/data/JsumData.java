@@ -34,7 +34,7 @@ public class JsumData extends JshshirEntity implements Serializable {
     @Column(length = 100)
     private String JOtchnew; //Ўзгартирилган отасининг исми	String	100 тагача белги	[0..1]
     @JsonProperty("jdatenew")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date JDatenew; //Ўзгартирилган туғилган санаси	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

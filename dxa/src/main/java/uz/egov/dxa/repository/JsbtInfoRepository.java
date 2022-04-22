@@ -32,11 +32,8 @@ public interface JsbtInfoRepository extends JpaRepository<JsbtInfo, UUID> {
 
 
     @Query(value = "select \n" +
-            "max(substr(jshshir, 6, 4))\n" +
-//            ", left(jshshir, 5)||substr(jshshir, 6, 4)||right(jshshir, 5)\n" +
-//            ", left(jshshir, 5)||substr(jshshir, 6, 4)||right(jshshir, 5)\n" +
-//            ", d.jshshir, left(jshshir, 5), right(jshshir, 5), d.*  \n" +
-            "from mh.jstm_data d\n" +
+            "coalesce(max(substr(jshshir, 11, 3)), '0')\n" +
+            "from dxa.jsbt_data d\n" +
             "where " +
             "    left(jshshir, 1)=:index_pola_i_veka_rojdeniya " +
             "and substr(jshshir, 2, 6)=:data_rojdeniya_ddMMyy " +

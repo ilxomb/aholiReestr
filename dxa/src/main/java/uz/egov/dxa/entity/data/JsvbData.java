@@ -28,13 +28,13 @@ public class JsvbData extends JshshirEntity implements Serializable {
     @Column(length = 25)
     private String Doc_num; //Ўлим ҳақидаги акт ёзуви рақами	String	25 тагача белги	[1]
     @JsonProperty("doc_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Doc_date; //Ўлим ҳақидаги акт ёзуви санаси	Date		[1]
     @JsonProperty("branch")
     @Column(length = 4)
     private String Branch; //Ўлим ҳақидаги акт ёзувини берган ФҲДЁ бўлими	String	4 та белги, маълумотнома асосида	[1]
     @JsonProperty("death_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Death_date; //Ўлим санаси	Date		[1]
     @JsonProperty("death_place")
     @Column(length = 200)
@@ -50,7 +50,7 @@ public class JsvbData extends JshshirEntity implements Serializable {
     @Column(length = 12)
     private String Cert_number; //Ўлим ҳақидаги гувоҳноманинг рақами	String	12 тагача белги	[1]
     @JsonProperty("cert_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Cert_date; //Ўлим ҳақидаги гувоҳноманинг санаси	Date		[1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

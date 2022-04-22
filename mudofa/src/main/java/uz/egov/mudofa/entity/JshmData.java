@@ -24,10 +24,10 @@ import java.util.Objects;
 public class JshmData extends JshshirEntity implements Serializable {
 
     @JsonProperty("hhindate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date HHinDate; //Ҳарбий ҳисобга биринчи марта қўйилган сана	Date		[1]
     @JsonProperty("hhoutdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date HHoutDate; //Ҳарбий ҳисобдан охирги марта чиқарилган (четлатилган) сана	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

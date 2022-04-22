@@ -33,7 +33,7 @@ public class JsvxData extends JshshirEntity implements Serializable {
     private String vxfio;
 
     @JsonProperty("vxbdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date vxbdate;
 
     @JsonProperty("vxjoy")
@@ -45,11 +45,11 @@ public class JsvxData extends JshshirEntity implements Serializable {
     private String vxgraj;
 
     @JsonProperty("vxdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date vxdate;
 
     @JsonProperty("vxsrok")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date vxsrok;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -36,7 +36,7 @@ public class JSBTData extends AbsEntity implements Serializable {
     private String botch;
 
     @JsonProperty("bdata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date bdata;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -24,16 +24,16 @@ import java.util.Objects;
 public class StajALL extends MainEntity implements Serializable {
 
     @JsonProperty("stajin1")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Stajin1;//Ҳисобга олинган меҳнат стажи (фаолият бошланган сана)	Date		[0..1]
     @JsonProperty("stajin2")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Stajin2;//Ҳисобга олинган меҳнат стажи (фаолият тамомланган сана)	Date		[0..1]
     @JsonProperty("stajout1")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Stajout1;//Ҳисобга олинмаган меҳнат стажи (фаолият бошланган сана)	Date		[0..1]
     @JsonProperty("stajout2")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Stajout2;//Ҳисобга олинмаган меҳнат стажи (фаолият тамомланган сана)	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

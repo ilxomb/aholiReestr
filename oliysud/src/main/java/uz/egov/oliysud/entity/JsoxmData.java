@@ -24,7 +24,7 @@ import java.util.Objects;
 public class JsoxmData extends JshshirEntity implements Serializable {
 
     @JsonProperty("sdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date SDate; //Суд қарори санаси	Date		[1]
     @JsonProperty("snumber")
     @Column(length = 100)

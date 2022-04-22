@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Setter
@@ -17,7 +18,8 @@ public class ResponseJSBT {
     @JsonProperty("botch")
     protected String BOtch; //Боланинг шарифи (отасининг исми)	String	100 тагача белги	[1]
     @JsonProperty("bdata")
-    protected String BData; //Боланинг туғилган санаси	Date		[1]
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
+    protected Date BData; //Боланинг туғилган санаси	Date		[1]
     @JsonProperty("bjshshir")
     protected String BJSHSHIR; //Болага берилган ЖШШИР	String	14 та белги	[1]
     @JsonProperty("id_org")

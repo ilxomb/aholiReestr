@@ -37,13 +37,13 @@ public class JsbtData extends JshshirEntity implements Serializable {
     @Column(length = 1)
     private String BPol; //Боланинг жинси	String	1 та белги, “0” – аёл, “1” - эркак.	[1]
     @JsonProperty("bdata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date BData; //Боланинг туғилган санаси	Date		[1]
     @JsonProperty("doc_num")
     @Column(length = 25)
     private String Doc_num; //Туғилганлик ҳакида акт ёзувининг рақами	String	25 тагача белги	[1]
     @JsonProperty("doc_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Doc_date; //Туғилганлик ҳакида акт ёзувининг санаси	Date		[1]
     @JsonProperty("branch")
     @Column(length = 4)
@@ -80,7 +80,7 @@ public class JsbtData extends JshshirEntity implements Serializable {
     @Column(length = 12)
     private String Cert_number; //Туғилганлик гувоҳномаси рақами	String	12 та белги	[1]
     @JsonProperty("cert_birth_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Cert_birth_date; //Туғилганлик гувоҳномаси санаси	Date		[1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

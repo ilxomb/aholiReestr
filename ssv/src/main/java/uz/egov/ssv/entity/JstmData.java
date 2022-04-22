@@ -42,11 +42,11 @@ public class JstmData extends JshshirEntity implements Serializable {
     private String disabilityReason;    //Ногиронлик сабаби	String	2 та белги, маълумотнома асосида	[0..1]
 
     @JsonProperty("disabilitydatestart")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date disabilityDateStart;    //Шахсни ногирон деб тан олинган сана	Date 		[0..1]
 
     @JsonProperty("disabilitydateend")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date disabilityDateEnd;    //Ногиронлик тугаш санаси	Date		[0..1]
 
     @JsonProperty("referenceseries")
@@ -79,7 +79,7 @@ public class JstmData extends JshshirEntity implements Serializable {
     private Integer ekriteria_7;    //Меҳнат фаолияти билан шуғулланиш лаёқати	Int		[0..1]
 
     @JsonProperty("epdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date epdate;    //Расмийлаштирилган сана (агар меҳнатда майибланганлик фоизи бўлса, протокол расмийлаштирилган сана)	Date		[0..1]
 
     @JsonProperty("comment")

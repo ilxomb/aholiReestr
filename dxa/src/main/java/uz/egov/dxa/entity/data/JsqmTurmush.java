@@ -40,7 +40,7 @@ public class JsqmTurmush extends MainEntity implements Serializable {
     @Column(length = 100)
     private String TUOtch; //Турмуш ўртоғининг отасининг исми	String	100 тагача белги	[0..1]
     @JsonProperty("tudata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date TUData; //Турмуш ўртоғининг туғилган санаси	Date		[1]
     @JsonProperty("tutjoy")
     @Column(length = 255)
@@ -54,7 +54,7 @@ public class JsqmTurmush extends MainEntity implements Serializable {
     @Column(length = 25)
     private String Doc_numN; //Акт ёзуви рақами	String	25 тагача белги	[0..1]
     @JsonProperty("doc_daten")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Doc_dateN; //Акт ёзуви санаси	Date		[0..1]
     @JsonProperty("branchn")
     @Column(length = 4)
@@ -66,7 +66,7 @@ public class JsqmTurmush extends MainEntity implements Serializable {
     @Column(length = 12)
     private String Cert_numberN; //Никоҳ гувоҳномаси рақами	String	12 та белги	[0..1]
     @JsonProperty("cert_daten")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Cert_dateN; //Никоҳ гувоҳномаси санаси	Date		[0..1]
 
     //Никоҳдан ажралиш тўғрисидаги гувоҳноманинг реквизитлари
@@ -74,7 +74,7 @@ public class JsqmTurmush extends MainEntity implements Serializable {
     @Column(length = 25)
     private String Doc_numA; //Акт ёзуви рақами	String	25 тагача белги	[0..1]
     @JsonProperty("doc_datea")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Doc_dateA; //Акт ёзуви санаси	Date		[0..1]
     @JsonProperty("fam_olda")
     @Column(length = 100)
@@ -92,7 +92,7 @@ public class JsqmTurmush extends MainEntity implements Serializable {
     @Column(length = 12)
     private String Cert_numberA; //Ажралиш ҳақидаги гувоҳнома рақами	String	12 та белги	[0..1]
     @JsonProperty("cert_datea")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date Cert_dateA; //Ажралиш ҳақидаги гувоҳнома санаси	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -26,10 +26,10 @@ public class JsmaData extends JshshirEntity implements Serializable {
     @JsonProperty("mnumber")
     protected Integer MNumber; //Умумий таълим муассасасининг рақами	Int		[1]
     @JsonProperty("min")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Min; //Умумий таълим муассасасига қабул қилинган сана	Date 		[1]
     @JsonProperty("mout")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Mout; //Умумий таълим муассасасини битирган (чиқарилган) сана	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

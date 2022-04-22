@@ -31,7 +31,7 @@ public class JspmData extends JshshirEntity implements Serializable {
     @Column(length = 9)
     protected String PasN; //Паспорт cерияси ва рақами	String	9 та белги	[1]
     @JsonProperty("pdate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date PDate; //Пенсия (нафақа) тайинланган сана	Date		[1]
     @JsonProperty("psum")
     protected Integer PSum; //Тайинланган пенсия (нафақа) миқдори	Int		[1]
@@ -43,7 +43,7 @@ public class JspmData extends JshshirEntity implements Serializable {
     @Column(length = 2)
     protected String Pturi; //Тайинланган пенсия (нафақа) тури	String	2 та белги, маълумотнома асосида	[1]
     @JsonProperty("psrok")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Psrok; //Тўлов муддати	Date		[0..1]
 
     @JsonProperty("StajALL")

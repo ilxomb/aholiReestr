@@ -39,7 +39,7 @@ public class JsqmBolalar extends MainEntity implements Serializable {
     @Column(length = 1)
     private String BPol; //Боланинг жинси	String	1 та белги, “0” – аёл, “1” - эркак.	[1]
     @JsonProperty("bdata")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date BData; //Боласининг туғилган санаси	Date		[1]
     @JsonProperty("btjoy")
     @Column(length = 255)

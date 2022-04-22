@@ -44,13 +44,13 @@ public class DData extends MainEntity implements Serializable {
     protected String Education; //Таълим тури	String	1 та белги: Бакалавр = 1; Магистр = 2; Мутахассис = 3.	[1]
 
     @JsonProperty("education_start_datе")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date Education_start_datе; //ОТМга қабул қилинган (таълим бошланган) сана	Date 		[1]
     @JsonProperty("duration_of_edu")
     protected Integer duration_of_edu; //Таълим давомийлиги	Int	2 та рақам	[1]
 
     @JsonProperty("diplom_given_date")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     protected Date diplom_given_date; //ОТМни битирган (диплом берилган) сана	Date 		[1]
     @JsonProperty("otmspes")
     @Column(length = 3)

@@ -21,7 +21,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table(name = "jsbt_data")
+@Table(name = "jsfo_data")
 public class JsfoData extends JshshirEntity implements Serializable {
 
     @JsonProperty("fojshshir")
@@ -37,7 +37,7 @@ public class JsfoData extends JshshirEntity implements Serializable {
     @Column(length = 100)
     private String FOOtch; //Отасининг исми	String	100 тагача белги	[0..1]
     @JsonProperty("fodate")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date FODate; //Туғилган санаси	Date		[1]
     @JsonProperty("fojoy")
     @Column(length = 255)
@@ -46,10 +46,10 @@ public class JsfoData extends JshshirEntity implements Serializable {
     @Column(length = 3)
     private String FODav; //Фуқаролиги	String	3 та белги, маълумотнома асосида	[1]
     @JsonProperty("fodatein")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date FODatein; //Фарзандликка олишнинг белгиланган санаси	Date		[1]
     @JsonProperty("fodateout")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy", timezone = "Asia/Tashkent")
     private Date FODateout; //Бекор қилинган санаси	Date		[0..1]
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
