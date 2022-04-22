@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dpm" />
+        <module name="tiv" />
         <module name="jwt" />
         <module name="oliyatestatsiya" />
         <module name="moliya" />
@@ -37,6 +38,7 @@
       <module name="oliysud" target="11" />
       <module name="oliytalim" target="11" />
       <module name="ssv" target="11" />
+      <module name="tiv" target="11" />
       <module name="xalqtaim" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -55,6 +57,7 @@
       <module name="oliysud" options="-parameters" />
       <module name="oliytalim" options="-parameters" />
       <module name="ssv" options="-parameters" />
+      <module name="tiv" options="-parameters" />
       <module name="xalqtaim" options="-parameters" />
     </option>
   </component>

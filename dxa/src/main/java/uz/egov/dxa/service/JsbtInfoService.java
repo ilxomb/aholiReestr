@@ -69,13 +69,23 @@ public class JsbtInfoService {
             poryadkobiy_nomer_grajdanina = century + "";
             kontrolnaya_ssifra = "000";
             poryadkobiy_nomer_grajdanina =
-                    kod_rayona_gorod.substring(3 - poryadkobiy_nomer_grajdanina.length()) +
+                    poryadkobiy_nomer_grajdanina.substring(3 - poryadkobiy_nomer_grajdanina.length()) +
                             poryadkobiy_nomer_grajdanina;
 
 
-
-
             kontrolnaya_ssifra = "?"; //TODO kontrolnaya_ssifra v JSHSHIR ?
+
+            century = 0
+             + Integer.parseInt(kontrolnaya_ssifra) * 7
+             + Integer.parseInt(data_rojdeniya_ddMMyy.substring(0, 2)) * 31
+             + Integer.parseInt(data_rojdeniya_ddMMyy.substring(2, 4)) * 73
+             + Integer.parseInt(data_rojdeniya_ddMMyy.substring(4, 6)) * 17
+             + Integer.parseInt(kod_rayona_gorod) * 317
+             + Integer.parseInt(poryadkobiy_nomer_grajdanina) * 317
+            ;
+            //010180
+            //012345
+            //123456
 
             ls.setJshshir(index_pola_i_veka_rojdeniya +
                     data_rojdeniya_ddMMyy +
