@@ -18,6 +18,7 @@
         <module name="discovery" />
         <module name="iiv" />
         <module name="ssv" />
+        <module name="oak" />
         <module name="jwt_rsa" />
         <module name="xalqtaim" />
       </profile>
@@ -31,6 +32,7 @@
       <module name="jwt_rsa" target="11" />
       <module name="moliya" target="11" />
       <module name="mudofa" target="11" />
+      <module name="oak" target="11" />
       <module name="oliyatestatsiya" target="11" />
       <module name="oliysud" target="11" />
       <module name="oliytalim" target="11" />
@@ -48,6 +50,7 @@
       <module name="jwt_rsa" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="mudofa" options="-parameters" />
+      <module name="oak" options="-parameters" />
       <module name="oliyatestatsiya" options="-parameters" />
       <module name="oliysud" options="-parameters" />
       <module name="oliytalim" options="-parameters" />

@@ -8,5 +8,20 @@ public class JshirDto {
 
     @JsonProperty("information_date")
     public String informationDate;
-    private String jshshir;
+
+    @JsonProperty("bjshshir")
+    public String bjshshir;
+
+    @JsonProperty("bfam")
+    public String bfam;
+
+    @JsonProperty("bism")
+    public String bism;
+
+    @JsonProperty("botch")
+    public String botch;
+
+    @JsonProperty("bdata")
+    public String bdata;
+
 }

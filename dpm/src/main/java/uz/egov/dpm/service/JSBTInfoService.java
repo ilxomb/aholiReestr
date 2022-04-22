@@ -7,9 +7,9 @@ import uz.egov.dpm.dto.JSBTDataDto;
 import uz.egov.dpm.dto.JSBTInfoDto;
 import uz.egov.dpm.entity.JSBTData;
 import uz.egov.dpm.entity.JSBTInformation;
+import uz.egov.dpm.repository.JSBTDataRepository;
 import uz.egov.dpm.repository.JSBTInfoRepository;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,10 +18,11 @@ import java.util.Optional;
 
 @Service
 public class JSBTInfoService {
-
-
     @Autowired
     JSBTInfoRepository jsbtInfoRepository;
+    @Autowired
+    JSBTDataRepository jsbtDataRepository;
+
 
     public List<ResponseType> save(JSBTInfoDto jsbtInfoDto) {
 
@@ -56,18 +57,33 @@ public class JSBTInfoService {
         }
 
         JSBTInformation jsInfo = new JSBTInformation();
-        Optional<JSBTInformation> bjshshirData = jsbtInfoRepository.findByJSHSHIR(jshshir);
-        System.out.println("bshshsir =" +bjshshirData);
-
-        if(bjshshirData.isPresent()){
-            jsInfo.setInformationDate(bjshshirData.get().getInformationDate());
-            jsInfo.setJsbtData(bjshshirData.get().getJsbtData());
+        List<JSBTData> jsbtDataList = new ArrayList<>();
+        Optional<List<JSBTData>> byBjshshir = jsbtDataRepository.findByBjshshir(jshshir);
+        if (byBjshshir.isPresent()) {
+            for (JSBTData jsbtData1 : byBjshshir.get()) {
+                JSBTData jsbtData = new JSBTData();
+                jsbtData.setBjshshir(jshshir);
+                jsbtData.setBotch(jsbtData1.getBotch());
+                jsbtData.setBism(jsbtData1.getBism());
+                jsbtData.setBfam(jsbtData1.getBfam());
+                jsbtData.setBdata(jsbtData1.getBdata());
+                jsbtData.setInformation(jsInfo);
+                jsbtDataList.add(jsbtData);
+            }
         }
+
+        Optional<JSBTInformation> jsInfobyJSHSHIR = jsbtInfoRepository.findByJSHSHIR(jshshir);
+        if(jsInfobyJSHSHIR.isPresent()){
+            jsInfo.setInformationDate(jsInfobyJSHSHIR.get().getInformationDate());
+            jsInfo.setJsbtData(jsbtDataList);
+        }
+        System.out.println(" jsInfo = " +jsInfo.toString());
         return jsInfo;
     }
 
-    public List<JSBTInformation> findByDate(Date sana) {
-        return jsbtInfoRepository.findByDate(sana);
+    public List<JSBTInformation> findByDate(String sana) {
+        java.util.Date dt = Utils.parseDate(sana);
+        return jsbtInfoRepository.findByDate(dt);
     }
 
     private JSBTInformation makeInfo(JSBTInfoDto jsbtInfoDto){

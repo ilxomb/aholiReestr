@@ -20,7 +20,7 @@ import java.util.Objects;
 public class JSBTData extends AbsEntity implements Serializable {
 
     @JsonProperty("bjshshir")
-    @Column(length = 14, nullable = false)
+    @Column(length = 14, nullable = false, unique = true)
     private String bjshshir;
 
     @JsonProperty("bfam")

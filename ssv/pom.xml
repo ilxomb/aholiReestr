@@ -48,7 +48,7 @@
             <optional>true</optional>
         </dependency>
 
-<!--  JWT  -->
+        <!--  JWT  -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
@@ -69,7 +69,7 @@
             <artifactId>jwt_rsa</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-<!--  JWT  -->
+        <!--  JWT  -->
 
 
     </dependencies>
