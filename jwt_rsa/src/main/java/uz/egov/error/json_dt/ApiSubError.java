@@ -1,4 +1,4 @@
-package uz.egov.error;
+package uz.egov.error.json_dt;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

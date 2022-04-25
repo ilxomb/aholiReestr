@@ -26,7 +26,7 @@ import java.util.List;
 @CrossOrigin()
 @RequestMapping("/api")
 @SecurityRequirement(name = "JWT token")
-@Tag(name = "Ташқи ишлар вазирлиги", description = "©")
+@Tag(name = "Ташқи ишлар вазирлиги (8.1.)", description = "©")
 public class JskxController {
 
     @Autowired

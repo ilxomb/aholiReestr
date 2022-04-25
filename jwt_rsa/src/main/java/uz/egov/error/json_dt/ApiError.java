@@ -1,4 +1,4 @@
-package uz.egov.error;
+package uz.egov.error.json_dt;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
