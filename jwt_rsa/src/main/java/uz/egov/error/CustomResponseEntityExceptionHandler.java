@@ -112,7 +112,7 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
         ErrorMessage errorMessage = null;
         if (ex instanceof NullPointerException) {
             status = HttpStatus.NOT_FOUND;
-            errorMessage = new ErrorMessage("ОШИБКА: значение не умещается " + ex.getMessage());
+            errorMessage = new ErrorMessage("ОШИБКА: значение NULL в столбце нарушает ограничение NOT NULL: " + ex.getMessage());
             errorMessage.setErrorCode(ErrorCodes.INVALID_INPUT);
         } else if (ex instanceof ObjectNotFoundException) {
             status = HttpStatus.NOT_FOUND;
