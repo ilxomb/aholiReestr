@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/iiv/iiv.iml" filepath="$PROJECT_DIR$/iiv/iiv.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt/jwt.iml" filepath="$PROJECT_DIR$/jwt/jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" filepath="$PROJECT_DIR$/jwt_rsa/jwt_rsa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mg/mg.iml" filepath="$PROJECT_DIR$/mg/mg.iml" />
       <module fileurl="file://$PROJECT_DIR$/moliya/moliya.iml" filepath="$PROJECT_DIR$/moliya/moliya.iml" />
       <module fileurl="file://$PROJECT_DIR$/mudofa/mudofa.iml" filepath="$PROJECT_DIR$/mudofa/mudofa.iml" />
       <module fileurl="file://$PROJECT_DIR$/oliyatestatsiya/oak.iml" filepath="$PROJECT_DIR$/oliyatestatsiya/oak.iml" />

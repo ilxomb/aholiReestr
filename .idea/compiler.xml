@@ -20,6 +20,7 @@
         <module name="iiv" />
         <module name="ssv" />
         <module name="oak" />
+        <module name="mg" />
         <module name="jwt_rsa" />
         <module name="xalqtaim" />
       </profile>
@@ -31,6 +32,7 @@
       <module name="iiv" target="11" />
       <module name="jwt" target="11" />
       <module name="jwt_rsa" target="11" />
+      <module name="mg" target="11" />
       <module name="moliya" target="11" />
       <module name="mudofa" target="11" />
       <module name="oak" target="11" />
@@ -50,6 +52,7 @@
       <module name="iiv" options="-parameters" />
       <module name="jwt" options="-parameters" />
       <module name="jwt_rsa" options="-parameters" />
+      <module name="mg" options="-parameters" />
       <module name="moliya" options="-parameters" />
       <module name="mudofa" options="-parameters" />
       <module name="oak" options="-parameters" />
