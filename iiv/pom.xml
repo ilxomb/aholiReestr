@@ -12,7 +12,7 @@
     <artifactId>iiv</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>iiv</name>
-    <description>iiv</description>
+    <description>Ички ишлар вазирлиги</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.1</spring-cloud.version>
@@ -47,6 +47,31 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!--  JWT  -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>uz.egov.jwt_rsa</groupId>
+            <artifactId>jwt_rsa</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--  JWT  -->
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

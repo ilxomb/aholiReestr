@@ -4,10 +4,26 @@ spring:
   application:
     name: iiv
   datasource:
-    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=md
+    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=iiv
     username: postgres
     password: 1111
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          jdbc:
+          time_zone: GMT+5
+        jackson:
+          time-zone: Asia/Tashkent
+          deserialization:
+            adjust-dates-to-context-time-zone: true
