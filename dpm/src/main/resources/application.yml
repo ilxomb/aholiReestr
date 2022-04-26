@@ -4,9 +4,11 @@ spring:
   application:
     name: dpm
   datasource:
-    url: jdbc:postgresql://localhost:5432/spring?currentSchema=dpm
+#    url: jdbc:postgresql://localhost:5432/spring?currentSchema=dpm
+    url: jdbc:postgresql://172.16.16.29:5432/postgres?currentSchema=dpm
     username: postgres
-    password: 3431215
+    #    password: 3431215
+    password: 1111
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

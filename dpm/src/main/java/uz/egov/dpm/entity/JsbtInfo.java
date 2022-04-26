@@ -6,6 +6,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import uz.egov.entity.MainEntity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "jsbt_info")
-public class JSBTInformation extends AbsEntity implements Serializable {
+public class JsbtInfo extends MainEntity implements Serializable {
 
     @JsonProperty("information_date")
     @JsonFormat(pattern= "dd.MM.yyyy HH:mm:ss")
@@ -32,13 +33,13 @@ public class JSBTInformation extends AbsEntity implements Serializable {
     @OneToMany(mappedBy = "information", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ToString.Exclude
-    private List<JSBTData> jsbtData;
+    private List<JsbtData> jsbtData;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        JSBTInformation that = (JSBTInformation) o;
+        JsbtInfo that = (JsbtInfo) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 
