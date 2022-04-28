@@ -44,7 +44,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             try {
                 //request.getContextPath();
                 //request.getServletPath();
-                username = jwtTokenUtil.getUsernameFromToken(jwtToken);
+                username = jwtTokenUtil.getUsernameFromToken(jwtToken);//TODO getUserNameFromToken
             } catch (SignatureException ex) {
                 logger.warn("Invalid JWT Signature");
 				request.setAttribute("expired", ex.getMessage());
