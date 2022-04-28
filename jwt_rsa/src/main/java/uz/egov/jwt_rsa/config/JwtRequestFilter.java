@@ -42,6 +42,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = requestTokenHeader.substring(7);
             try {
+                //request.getContextPath();
+                //request.getServletPath();
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
             } catch (SignatureException ex) {
                 logger.warn("Invalid JWT Signature");

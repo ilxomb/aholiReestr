@@ -52,7 +52,7 @@ public class JwtTokenUtil implements Serializable {
 		Claims claims = null;
 		try {
 			// Certificate X.509
-			List<CertEntity> certList = repo.findAll();
+			List<CertEntity> certList = repo.findAll();//TODO repository Certificate X.509
 			CertEntity certEntity = certList.get(0);
 
 //			FileInputStream fin = new FileInputStream("d:/temp/cn.cer");
